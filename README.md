@@ -9,7 +9,7 @@ Version 0 was maintained on my academic webpages as a postdoc.
 * Version 0.2: http://www.eecis.udel.edu/~dror/coding/GPD/gpd.html
 * Version 0.3: http://web.eecs.utk.edu/~drorabau/coding/gpd/gpd.html
 
-Version 1 begins here in GitHub, under a GNU license.
+Version 1 begins here in GitHub, under GNU license GPLv3.
 
 ----
 
