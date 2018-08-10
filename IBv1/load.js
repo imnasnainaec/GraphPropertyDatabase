@@ -81,7 +81,6 @@ function load(n) {
 
 // This function goes through the property list to identify where each goes in the "clock".
 // This "clock" is refering to the 6 locations surrounding the select, central property.
-// TODO: Rewrite this for lower triangular implication array.
 function propSort(n) {
     var nm, mn, 
         clock = [[],[],[],[],[],[],[]];

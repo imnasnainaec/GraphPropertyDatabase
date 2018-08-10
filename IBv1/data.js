@@ -28,7 +28,7 @@ var cite = [ ["Author","Title","year","url","doi"],
         "E`dg":        [6,    [ 1,-1,-1,-1,-1, 1, 1, 1,-1,-1, 1, 1],    1045],
         "Es\o":        [6,    [ 1,-1,-1,-1,-1, 1, 1, 1,-1, 1,-1,-1],    84],
         "EJ\w":        [6,    [-1, 1,-1,-1,-1,-1, 1,-1, 1,-1,-1,-1],    214],
-        "I??GOOF@o":[10,[-1, 1,-1,-1, 1, 1, 1,-1,-1,-1,-1,-1],    0],
+        "I??GOOF@o":        [10,    [-1, 1,-1,-1, 1, 1, 1,-1,-1,-1,-1,-1],    0],
     },
 
 // Array of graph properties.
@@ -82,13 +82,20 @@ var cite = [ ["Author","Title","year","url","doi"],
     ],
 
 // Array of implication reasons, whose indices are used in the implies array.
-// TODO: replace wthis with 1-letter code.
-// NOTE: "Self" will not be needed with implication array is triangulized.
+// TODO: replace this with 1-letter code.
     reason = [,
         "Self",
         "Trivial",
         "Folklore",
         "Citation",
     ];
+/*
+    reasonDict = {
+        "S": "Self",
+        "T": "Trivial",
+        "F": "Folklore",
+        "C": "Citation",
+    };
+*/
 
 
