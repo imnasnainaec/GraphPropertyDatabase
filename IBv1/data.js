@@ -1,11 +1,13 @@
 //    Copyright 2016 Danny Rorabaugh
 //    For the Graph Property Database
 
+//Array of reference data.
 var cite = [ ["Author","Title","year","url","doi"],
         ["G. A. Dirac","Some theorems on abstract graphs",1952,null,"10.1112/plms/s3-2.1.69"],
         ["K. Wagner","&Uuml;ber eine Eigenschaft der ebenen Komplexe",1937,null,"10.1007/BF01594196"],
     ],
 
+// Dictionary of example graphs, with graph6 code as keys.
 // "graph6": ["vertices", "exampleOf", "HoG-id"]
     exampDict = {
         "@":        [1,    [ 1,-1, 1, 1, 1, 1,-1,-1, 1,-1, 1, 1],    1310],
@@ -24,6 +26,7 @@ var cite = [ ["Author","Title","year","url","doi"],
         "I??GOOF@o":[10,[-1, 1,-1,-1, 1, 1, 1,-1,-1,-1,-1,-1],    0],
     },
 
+// Array of graph properties.
 // ["Name","Definition","Array of keyword abrv"]
     props = [
         [ "Connected",    "There exists a path between any two given vertices.",    ["CO"] ],
@@ -40,6 +43,7 @@ var cite = [ ["Author","Title","year","url","doi"],
         [ "No K_5 or K_{3,3} Minor",    "Has neither K_5 nor K_{3,3} as a minor.",    ["FS"] ],
     ],
 
+// Dictionary of property keywords, with two-letter abbreviations as keys.
     keyDict = {
         CH:"Chromatic",
         CO:"Connectivity",
@@ -51,6 +55,7 @@ var cite = [ ["Author","Title","year","url","doi"],
         SI:"Size",
     },
 
+// Array of implications betweeen the graph properties. 
 //[ 
 //    1->implies 0->unknown -1->does not imply -2->mutually exclusive, 
 //    n->reason[n], 
@@ -71,9 +76,12 @@ var cite = [ ["Author","Title","year","url","doi"],
         [[-1,2,[]], [-1,2,[]], [-1,2,[]], [-1,2,[]], [-1,2,[]], [-1,2,[]], [-1,2,[]], [-1,2,[]], [-1,2,[]], [-1,2,[]], [1,4,[2]], [1,1,[]] ],
     ],
 
+// Array of implication reasons, whose indices are used in the implies array.
     reason = [,
         "Self",
         "Trivial",
         "Folklore",
         "Citation",
     ];
+
+
