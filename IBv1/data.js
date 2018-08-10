@@ -9,6 +9,11 @@ var cite = [ ["Author","Title","year","url","doi"],
 
 // Dictionary of example graphs, with graph6 code as keys.
 // "graph6": ["vertices", "exampleOf", "HoG-id"]
+// "exampleOf" is a -1/0/1 array with entry i corresponding to property i:
+//      1 indicates having the property, 
+//      -1 indicates not having the property, 
+//      0 indicates status tbd.
+// "HoG-id" is 0 if the graph is not in the House of Graphs. 
     exampDict = {
         "@":        [1,    [ 1,-1, 1, 1, 1, 1,-1,-1, 1,-1, 1, 1],    1310],
         "A_":        [2,    [ 1,-1, 1, 1, 1, 1,-1,-1, 1,-1, 1, 1],    19655],
@@ -77,6 +82,8 @@ var cite = [ ["Author","Title","year","url","doi"],
     ],
 
 // Array of implication reasons, whose indices are used in the implies array.
+// TODO: replace wthis with 1-letter code.
+// NOTE: "Self" will not be needed with implication array is triangulized.
     reason = [,
         "Self",
         "Trivial",

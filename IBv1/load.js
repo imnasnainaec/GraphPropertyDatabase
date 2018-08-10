@@ -3,20 +3,30 @@
 
 var propID;
 
+// The function initiate() is run when ib.html loads.
 function initiate() {
+    // The url can be used to specify a starting property.
+    // E.g., append ?prop=5 to the url.
     var querystring = window.location.search;
+    // Currently, anything name can precede the = and it will work.
     var queryarray = querystring.split("=");
-    if(queryarray.length<2) {
+    if(queryarray.length<2 || queryarray[1]>=props.length) {
         propID = Math.floor(Math.random() * props.length); 
     } else {
         propID = Number(queryarray[1]); 
     };
     load(propID);
+    // TODO: Establish a fixed name for url assignment, so it doesn't have to be first arg.
+    // TODO: Add check to make sure value is non-negative integer.
 }
 
+// The function load(*) is called by initiate() and in ib.html by all property hyperlinks.
 function load(n) {
     propID = n;
+
+    // First, in case the keyword modal is open, we close it.
     closeModal();
+
     if(n>=0) {
         var P = props[n];
         
@@ -66,8 +76,12 @@ function load(n) {
             document.getElementById(clockKey[i]).innerHTML = code;
         }
     }
+    // TODO: Add else warning, and also check to make sure arg is and integer.
 }
 
+// This function goes through the property list to identify where each goes in the "clock".
+// This "clock" is refering to the 6 locations surrounding the select, central property.
+// TODO: Rewrite this for lower triangular implication array.
 function propSort(n) {
     var nm, mn, 
         clock = [[],[],[],[],[],[],[]];
@@ -99,15 +113,20 @@ function propSort(n) {
     return clock;
 }
 
+// This function looks for any example graph that has prop n,
+//  but not prop m.
 function counterexample(n,m) {
     for(var EX in exampDict) {
         if(exampDict[EX][1][n]==1 && exampDict[EX][1][m]==-1) {
             return EX;
         };
     };
+    // TODO: Add reaction when no counterexmple exists in the local list.
     return null;
 }
-    
+
+// If it has been indicated that n does not imply m and reason is counterexample,
+//  then this function find it and loads the corresponding image from HoG (if it exists there).
 function counterexampleCode(n,m) {
     var EX = counterexample(n,m);
     var snippet = "";
@@ -122,6 +141,8 @@ function counterexampleCode(n,m) {
     return snippet;
 }
 
+// If the implication reason is a citation, 
+//  then this functin loads the citation and a link.
 function citationCode(refs) {
     var snippet = "";
     if(refs.length>0) {
@@ -148,6 +169,9 @@ function citationCode(refs) {
     return snippet;
 }
 
+// When a keyword hyperlink is clicked, this function laods the keyword modal.
+// The arg abrv specifies which keyword was selected; 
+//  properties with that keyword are listed below the list of keywords.
 function keyModal(abrv) {
     var code = keyLister(abrv);
     document.getElementById("keyList").innerHTML = code;
@@ -163,10 +187,13 @@ function keyModal(abrv) {
     code = propLister(items);
     document.getElementById("propList").innerHTML = code;
     
+    // This final line makes the modal visible.
     document.getElementById("keywordModal").style.display = "block";
 }
 
-function propLister(items,n) {
+// Given a list items of properties, 
+//  this generates the HTML for insertion in a clock region.
+function propLister(items) {
     var r, snippet = "";
     for(i=0, len=items.length; i<len; i++) {
         r = items[i];
@@ -179,6 +206,10 @@ function propLister(items,n) {
     return snippet;
 }
 
+// Given a keyword code abrv, 
+//  this generates the html for the keyword modal.
+// Since the only use of the input is to not create a hyperlink for it,
+//  it is okay if this function is called for a non-existant abrv.
 function keyLister(abrv) {
     var snippet = "";
     for(var key in keyDict) {
@@ -191,6 +222,8 @@ function keyLister(abrv) {
     return snippet + "<br>";
 }
 
+// This closes the keyword modal.
 function closeModal() {
     document.getElementById("keywordModal").style.display = "none";
 }
+
