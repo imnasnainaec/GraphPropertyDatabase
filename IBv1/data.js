@@ -1,6 +1,8 @@
 //    Copyright 2016 Danny Rorabaugh
 //    For the Graph Property Database
 
+// TODO: migrate contents of this file to HDF5 files in code folder.
+
 //Array of reference data.
 var cite = [ ["Author","Title","year","url","doi"],
         ["G. A. Dirac","Some theorems on abstract graphs",1952,null,"10.1112/plms/s3-2.1.69"],
