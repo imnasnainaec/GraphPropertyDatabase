@@ -5,8 +5,8 @@
 
 //Array of reference data.
 var cite = [ ["Author","Title","year","url","doi"],
-        ["G. A. Dirac","Some theorems on abstract graphs",1952,null,"10.1112/plms/s3-2.1.69"],
-        ["K. Wagner","&Uuml;ber eine Eigenschaft der ebenen Komplexe",1937,null,"10.1007/BF01594196"],
+        ["G. A. Dirac","Some theorems on abstract graphs",1952,,"10.1112/plms/s3-2.1.69"],
+        ["K. Wagner","&Uuml;ber eine Eigenschaft der ebenen Komplexe",1937,,"10.1007/BF01594196"],
     ],
 
 // Dictionary of example graphs, with graph6 code as keys.
