@@ -10,15 +10,16 @@ Version 0 was maintained on my academic webpages as a postdoc.
 * IBv0.3: http://web.eecs.utk.edu/~drorabau/coding/gpd/gpd.html
 
 Version 1 resides here in GitHub, under GNU license GPLv3.
-* IBv1.0 (stable): https://imnasnainaec.github.io/GPD/ib.html
-* IBv1.0.0 (dev): http://htmlpreview.github.io/?https://github.com/imnasnainaec/GraphPropertyDatabase/blob/IB-dev/IBv1/ib.html
+* IB (published) https://imnasnainaec.github.io/GPD/ib.html
+* IBv1.0 (stable) https://imnasnainaec.github.io/GraphPropertyDatabase/IBv1/ib.html
+* IBv1.0.? (dev) http://htmlpreview.github.io/?https://github.com/imnasnainaec/GraphPropertyDatabase/blob/IB-dev/IBv1/ib.html
 
 ----
 
 Permanent Branches:
 * master
   * The main branch for merging stable elements.
-  * From this branch only should the website be copied to imnasnainaec.github.io.
+  * From this branch only should the website be copied to imnasnainaec.github.io/GPD/.
   
 * IB-dev
   * The main development branch for the Implication Browser.
